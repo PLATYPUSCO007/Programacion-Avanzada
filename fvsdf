@@ -1,0 +1,36 @@
+[33mcommit 6b8f923934561e521432fbe2c21db070d4197391[m[33m ([m[1;36mHEAD -> [m[1;32mBuscarUnEstudiante[m[33m)[m
+Author: PLATYPUSCO007 <37806148+PLATYPUSCO007@users.noreply.github.com>
+Date:   Thu Sep 13 14:47:35 2018 -0500
+
+    Buscar un estudiante
+
+[33mcommit bcf991de120a9c48b894a633dfefa7d818f24744[m[33m ([m[1;32mfeature[m[33m)[m
+Author: PLATYPUSCO007 <37806148+PLATYPUSCO007@users.noreply.github.com>
+Date:   Thu Sep 13 14:13:36 2018 -0500
+
+    Eliminar un estudiante
+
+[33mcommit 06e3320eae57c2e0d2685de5d775c4002141825b[m
+Author: PLATYPUSCO007 <37806148+PLATYPUSCO007@users.noreply.github.com>
+Date:   Thu Sep 13 13:36:51 2018 -0500
+
+    Editar un estudiante
+
+[33mcommit 67cb7106c4a70c3522c78811871071aaa726fba3[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: bdb4f7f efac5c8
+Author: PLATYPUSCO007 <37806148+PLATYPUSCO007@users.noreply.github.com>
+Date:   Sun Sep 9 13:56:13 2018 -0500
+
+    Merge remote-tracking branch 'upstream/master'
+
+[33mcommit bdb4f7fa87af5a92e80e9fb6f2fbda679f949d4b[m
+Author: PLATYPUSCO007 <37806148+PLATYPUSCO007@users.noreply.github.com>
+Date:   Sun Sep 9 13:28:01 2018 -0500
+
+    Creando repositorio en git
+
+[33mcommit efac5c8b7554ff30ea49466951e023472ec72fb7[m
+Author: PLATYPUSCO007 <37806148+PLATYPUSCO007@users.noreply.github.com>
+Date:   Mon Aug 13 19:15:12 2018 -0500
+
+    Initial commit

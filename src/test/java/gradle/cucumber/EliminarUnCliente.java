@@ -8,6 +8,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+
+import modelo.Ciudades;
+import modelo.Departamentos;
 import modelo.Estudiante;
 import repositorio.EstudianteDao;
 import repositorio.Runner;
@@ -36,8 +39,8 @@ public class EliminarUnCliente {
 		estudiante = new Estudiante();
 		estudiante.setNombre("Gonzalo");
 		estudiante.setApellidos("Higuain");
-		estudiante.setCiudad("Quilmes");
-		estudiante.setDepartamento("BA");
+		estudiante.setCiudad(Ciudades.Barranquilla);
+		estudiante.setDepartamento(Departamentos.Atlantico);
 		estudiante.setIdentificacion(1345876509);
 		estudianteDao.guardar(estudiante);
 	}

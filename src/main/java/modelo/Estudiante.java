@@ -12,17 +12,17 @@ public class Estudiante implements Serializable {
 
 	@Id
 	@GeneratedValue
-	public int id;
+	int id;
 	@Column(unique = true)
-	public int identificacion;
+	int identificacion;
 	@Column
-	public String nombre;
+	String nombre;
 	@Column
-	public String apellidos;
+	String apellidos;
 	@Column
-	public String ciudad;
+	Ciudades ciudad;
 	@Column
-	public String departamento;
+	Departamentos departamento;
 
 	public int getId() {
 		return id;
@@ -56,19 +56,19 @@ public class Estudiante implements Serializable {
 		this.apellidos = apellidos;
 	}
 
-	public String getCiudad() {
+	public Ciudades getCiudad() {
 		return ciudad;
 	}
 
-	public void setCiudad(String ciudad) {
+	public void setCiudad(Ciudades ciudad) {
 		this.ciudad = ciudad;
 	}
 
-	public String getDepartamento() {
+	public Departamentos getDepartamento() {
 		return departamento;
 	}
 
-	public void setDepartamento(String departamento) {
+	public void setDepartamento(Departamentos departamento) {
 		this.departamento = departamento;
 	}
 	

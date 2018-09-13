@@ -12,6 +12,8 @@ import cucumber.api.java.en.When;
 import repositorio.Runner;
 import repositorio.SessionFactoryProvider;
 import repositorio.EstudianteDao;
+import modelo.Ciudades;
+import modelo.Departamentos;
 import modelo.Estudiante;
 
 
@@ -37,8 +39,8 @@ public class CrearUnEstudiante {
 		estudiante = new Estudiante();
 		estudiante.setNombre("William");
 		estudiante.setApellidos("Enciso");
-		estudiante.setCiudad("Bogota");
-		estudiante.setDepartamento("Cundinamarca");
+		estudiante.setCiudad(Ciudades.Florencia);
+		estudiante.setDepartamento(Departamentos.Caqueta);
 		estudiante.setIdentificacion(1022408475);
 		estudianteDao.guardar(estudiante);
 		

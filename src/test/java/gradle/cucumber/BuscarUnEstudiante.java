@@ -8,6 +8,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import modelo.Ciudades;
+import modelo.Departamentos;
 import modelo.Estudiante;
 import repositorio.EstudianteDao;
 import repositorio.Runner;
@@ -37,8 +39,8 @@ public class BuscarUnEstudiante {
 		estudiante = new Estudiante();
 		estudiante.setNombre("Sara");
 		estudiante.setApellidos("Guzman");
-		estudiante.setCiudad("Valledupar");
-		estudiante.setDepartamento("Cesar");
+		estudiante.setCiudad(Ciudades.Bogota);
+		estudiante.setDepartamento(Departamentos.Cundinamarca);
 		estudiante.setIdentificacion(291435612);
 		estudianteDao.guardar(estudiante);
 	}

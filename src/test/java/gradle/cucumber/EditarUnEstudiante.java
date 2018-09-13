@@ -7,6 +7,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+
+import modelo.Ciudades;
+import modelo.Departamentos;
 import modelo.Estudiante;
 import repositorio.EstudianteDao;
 import repositorio.Runner;
@@ -34,8 +37,8 @@ public class EditarUnEstudiante {
 		estudiante = new Estudiante();
 		estudiante.setNombre("Alejandra");
 		estudiante.setApellidos("Vergara");
-		estudiante.setCiudad("Tunja");
-		estudiante.setDepartamento("Boyaca");
+		estudiante.setCiudad(Ciudades.Tunja);
+		estudiante.setDepartamento(Departamentos.Boyaca);
 		estudiante.setIdentificacion(1012413642);
 		estudianteDao.guardar(estudiante);
 		

@@ -1,5 +1,7 @@
 package gradle.cucumber;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -42,6 +44,7 @@ public class EliminarUnCliente {
 		estudiante.setCiudad(Ciudades.Barranquilla);
 		estudiante.setDepartamento(Departamentos.Atlantico);
 		estudiante.setIdentificacion(1345876509);
+		estudiante.setFechaDeIngreso(new Date());
 		estudianteDao.guardar(estudiante);
 	}
 

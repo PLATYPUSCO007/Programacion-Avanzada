@@ -5,3 +5,4 @@ public enum Departamentos {
 	Choco, Cordoba, Guainia, Guaviare, Huila, LaGuajira, Magdalena, Meta, Nariño, NSantander, Putumayo, Quindio,
 	Risaralda, SP, Santander, Sucre, Tolima, ValleCauca, Vaupes, Vichada;
 }
+

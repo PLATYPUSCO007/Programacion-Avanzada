@@ -1,9 +1,12 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -15,21 +18,25 @@ public class Estudiante implements Serializable {
 	int id;
 	@Column(unique = true)
 	int identificacion;
+	@Enumerated(EnumType.STRING)
+	Identificacion tipoIdentificacion;
 	@Column
 	String nombre;
 	@Column
 	String apellidos;
-	@Column
+	@Enumerated(EnumType.STRING)
 	Ciudades ciudad;
-	@Column
+	@Enumerated(EnumType.STRING)
 	Departamentos departamento;
+	@Column
+	Date fechaDeIngreso;
 
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
-		this.id=id;
+		this.id = id;
 	}
 
 	public int getIdentificacion() {
@@ -71,6 +78,23 @@ public class Estudiante implements Serializable {
 	public void setDepartamento(Departamentos departamento) {
 		this.departamento = departamento;
 	}
+
+	public Date getFechaDeIngreso() {
+		return fechaDeIngreso;
+	}
+
+	public void setFechaDeIngreso(Date fechaDeIngreso) {
+		this.fechaDeIngreso = fechaDeIngreso;
+	}
+
+	public Identificacion getTipoIdentificacion() {
+		return tipoIdentificacion;
+	}
+
+	public void setTipoIdentificacion(Identificacion tipoIdentificacion) {
+		this.tipoIdentificacion = tipoIdentificacion;
+	}
 	
 	
+
 }

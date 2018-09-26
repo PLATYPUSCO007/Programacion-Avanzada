@@ -1,5 +1,7 @@
 package gradle.cucumber;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Assert;
@@ -42,6 +44,7 @@ public class BuscarUnEstudiante {
 		estudiante.setCiudad(Ciudades.Bogota);
 		estudiante.setDepartamento(Departamentos.Cundinamarca);
 		estudiante.setIdentificacion(291435612);
+		estudiante.setFechaDeIngreso(new Date());
 		estudianteDao.guardar(estudiante);
 	}
 

@@ -1,6 +1,8 @@
 package gradle.cucumber;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,7 +25,7 @@ public class BuscarUnEstudiante {
 	Transaction tx;
 	Estudiante estudiante;
 	EstudianteDao estudianteDao;
-	Estudiante idEstudiante;
+	List<Estudiante> idEstudiante;
 	
 	@Given("iniciar sesion")
 	public void iniciar_sesion() {
@@ -50,13 +52,14 @@ public class BuscarUnEstudiante {
 
 	@And("busco el estudiante en la BD")
 	public void busco_el_estudiante_de_la_BD() {
-		idEstudiante = new Estudiante();
-		idEstudiante = estudianteDao.recuperar("identificacion", 291435612);
+		idEstudiante = new ArrayList<Estudiante>();
+		idEstudiante = (List<Estudiante>) estudianteDao.buscarEstudiantesSimilares("nombre", "Sara");
+		tx.commit();
 	}
 
 	@Then("imprimo la busqueda")
 	public void imprimo_la_busqueda() {
-		Assert.assertEquals(291435612, idEstudiante.getIdentificacion());
+		Assert.assertNotNull("", idEstudiante);
 		session.close();
 	}
 

@@ -21,8 +21,10 @@
 		<property name="show_sql">true</property>
 		
 
-		<!-- >property name="hibernate.hbm2ddl.auto">create-drop</property --> 
+		<property name="hibernate.hbm2ddl.auto">create-drop</property> 
+		<mapping class="modelo.Persona" />
 		<mapping class="modelo.Estudiante" />
+		<mapping class="modelo.Profesor" />
 		
     </session-factory>
 </hibernate-configuration>

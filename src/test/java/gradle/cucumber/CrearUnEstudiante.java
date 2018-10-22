@@ -16,6 +16,7 @@ import repositorio.EstudianteDao;
 import modelo.Ciudades;
 import modelo.Departamentos;
 import modelo.Estudiante;
+import modelo.Persona;
 
 
 public class CrearUnEstudiante {

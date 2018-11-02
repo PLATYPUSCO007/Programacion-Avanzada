@@ -39,7 +39,7 @@ public class RepositorioHibernate<T> implements Repositorio<T> {
 	@Override
 	public void borrar(String campo, Serializable key) {
 		Session session = Runner.getCurrentSession();
-		session.delete(this.recuperar(campo, key));
+		session.delete(this.recuperarUno(campo, key));
 	}
 
 	@Override
@@ -55,7 +55,15 @@ public class RepositorioHibernate<T> implements Repositorio<T> {
 		session.createQuery("delete from " + tipo.getSimpleName()).executeUpdate();
 	}
 
-	public T recuperar(String campo, Serializable valor) {
+	public List<T> recuperarVarios(String campo, Serializable valor) {
+		Session session = Runner.getCurrentSession();
+		String hql = "from " + tipo.getSimpleName() + " t " + "where t." + campo + " = :valor ";
+		Query<T> query = session.createQuery(hql, tipo);
+		query.setParameter("valor", valor);
+		return (List<T>) query.getResultList();
+	}
+	
+	public T recuperarUno(String campo, Serializable valor) {
 		Session session = Runner.getCurrentSession();
 		String hql = "from " + tipo.getSimpleName() + " t " + "where t." + campo + " = :valor ";
 		Query<T> query = session.createQuery(hql, tipo);
@@ -68,7 +76,7 @@ public class RepositorioHibernate<T> implements Repositorio<T> {
 	public boolean contiene(String campo, Serializable key) {
 		boolean res = false;
 		try {
-			res = (null != this.recuperar(campo, key));
+			res = (null != this.recuperarUno(campo, key));
 		} catch (Exception e) {
 
 			System.out.println("no se encuentra en la base de datos");

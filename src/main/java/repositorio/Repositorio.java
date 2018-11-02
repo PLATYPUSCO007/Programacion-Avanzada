@@ -64,11 +64,25 @@ public interface Repositorio<T> {
 	 */
 	void borrarTodo();
 
+	
 	/**
-	 * Devuelve la suma total de la tabla pago segun las fechas ingresadas
+	 * Recupera un nuevo objeto, pero con los atributos de la base de datos que le
+	 * pertenecian al objeto que fue persistido
 	 * 
-	 * @param String
-	 *            , String
+	 * @param nombre
+	 * @return un objeto de la clase que implemente la interfaz
 	 */
+	
+	T recuperarUno(String campo, Serializable key);
+	
+	/**
+	 * Recupera una lista con objetos, pero con los atributos de la base de datos que le
+	 * pertenecen a cada objeto persistido
+	 * 
+	 * @param nombre
+	 * @return una lista de objetos de la clase que implemente la interfaz
+	 */
+	
+	List<T> recuperarVarios(String campo, Serializable key);
 	
 }

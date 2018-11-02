@@ -56,7 +56,7 @@ public class EliminarUnCliente {
 
 	@Then("valido la eliminacion")
 	public void valido_la_eliminacion() {
-		Assert.assertEquals(false, estudianteDao.contiene("nombre", null));
+		Assert.assertEquals(false, estudianteDao.contiene("nombre", "Gonzalo"));
 		session.close();
 	}
 

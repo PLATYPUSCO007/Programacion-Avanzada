@@ -25,7 +25,7 @@ public class BuscarUnEstudiante {
 	Transaction tx;
 	Estudiante estudiante;
 	EstudianteDao estudianteDao;
-	List<Estudiante> idEstudiante;
+	String[] idEstudiante;
 	
 	@Given("iniciar sesion")
 	public void iniciar_sesion() {
@@ -52,14 +52,14 @@ public class BuscarUnEstudiante {
 
 	@And("busco el estudiante en la BD")
 	public void busco_el_estudiante_de_la_BD() {
-		idEstudiante = new ArrayList<Estudiante>();
-		idEstudiante = (List<Estudiante>) estudianteDao.buscarEstudiantesSimilares("nombre", "Sara");
+		idEstudiante = new String[1];
+		idEstudiante[0] = estudianteDao.recuperarUno("nombre", "Sara").getNombre();
 		tx.commit();
 	}
 
 	@Then("imprimo la busqueda")
 	public void imprimo_la_busqueda() {
-		Assert.assertNotNull("", idEstudiante);
+		Assert.assertNotNull("", idEstudiante[0]);
 		session.close();
 	}
 

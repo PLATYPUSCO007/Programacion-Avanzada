@@ -53,7 +53,6 @@ public class EditarUnEstudiante {
 	@Then("valido su edicion")
 	public void valido_su_edicion() {
 		Assert.assertTrue(estudianteDao.contiene("nombre", "Maria"));
-
 	}
 
 }

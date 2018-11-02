@@ -8,6 +8,10 @@ public class Profesor extends Persona {
 	
 	@Column
 	private String area;
+	
+	public Profesor() {
+		
+	}
 
 	public Profesor(int identificacion, Identificacion tipoIdentificacion, String nombre, String apellido,
 			Ciudades ciudad, Departamentos departamento, String area) {

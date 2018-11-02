@@ -6,6 +6,8 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import modelo.Departamentos;
+
 public class RepositorioHibernate<T> implements Repositorio<T> {
 
 	private Class<T> tipo;

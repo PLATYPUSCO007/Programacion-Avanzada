@@ -43,6 +43,8 @@ public class CrearUnProfesor {
 		profesor.setDepartamento(Departamentos.Atlantico);
 		profesor.setTipoIdentificacion(Identificacion.CC);
 		profesor.setIdentificacion(1231231);
+		profesor.setUsuario("pedro");
+		profesor.setPass("holamundo");
 		profesor.setArea("Sistemas");
 		
 		profesordao.guardar(profesor);

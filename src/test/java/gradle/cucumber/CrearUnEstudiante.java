@@ -44,6 +44,8 @@ public class CrearUnEstudiante {
 		estudiante.setCiudad(Ciudades.Florencia);
 		estudiante.setDepartamento(Departamentos.Caqueta);
 		estudiante.setIdentificacion(1022408475);
+		estudiante.setUsuario("platypus");
+		estudiante.setPass("holamundo");
 		estudiante.setFechaDeIngreso(new Date());
 		estudianteDao.guardar(estudiante);
 		

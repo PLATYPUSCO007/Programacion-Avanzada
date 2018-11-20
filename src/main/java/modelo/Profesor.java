@@ -14,9 +14,9 @@ public class Profesor extends Persona {
 	}
 
 	public Profesor(int identificacion, Identificacion tipoIdentificacion, String nombre, String apellido,
-			Ciudades ciudad, Departamentos departamento, String area) {
+			Ciudades ciudad, Departamentos departamento, String usuario, String password, String area) {
 
-		super(identificacion, tipoIdentificacion, nombre, apellido, ciudad, departamento);
+		super(identificacion, tipoIdentificacion.CC, nombre, apellido, ciudad, departamento, usuario, password);
 		this.area = area;
 	}
 

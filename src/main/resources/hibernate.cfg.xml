@@ -25,6 +25,7 @@
 		<mapping class="modelo.Persona" />
 		<mapping class="modelo.Estudiante" />
 		<mapping class="modelo.Profesor" />
+		<mapping class="modelo.Materia" />
 		
     </session-factory>
 </hibernate-configuration>

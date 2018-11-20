@@ -15,9 +15,9 @@ public class Estudiante extends Persona{
 	}
 	
 	public Estudiante(int identificacion, Identificacion tipoIdentificacion, 
-			String nombre, String apellido, Ciudades ciudad, Departamentos departamento, Date fechaDeIngreso) {
+			String nombre, String apellido, Ciudades ciudad, Departamentos departamento, String usuario, String password, Date fechaDeIngreso) {
 		
-		super(identificacion, tipoIdentificacion, nombre, apellido, ciudad, departamento);
+		super(identificacion, tipoIdentificacion, nombre, apellido, ciudad, departamento, usuario, password);
 		this.fechaDeIngreso = fechaDeIngreso;
 	}
 	

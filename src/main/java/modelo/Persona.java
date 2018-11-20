@@ -22,6 +22,10 @@ public abstract class Persona implements Serializable {
 	private int id;
 	@Column(unique = true)
 	private int identificacion;
+	@Column(unique = true)
+	private String usuario;
+	@Column
+	private String password;
 	@Enumerated(EnumType.STRING)
 	private Identificacion tipoIdentificacion;
 	@Column
@@ -37,13 +41,15 @@ public abstract class Persona implements Serializable {
 	}
 
 	public Persona(int identificacion, Identificacion tipoIdentificacion, String nombre, String apellido,
-			Ciudades ciudad, Departamentos departamento) {
+			Ciudades ciudad, Departamentos departamento, String usuario, String password) {
 		this.identificacion = identificacion;
 		this.tipoIdentificacion = tipoIdentificacion;
 		this.nombre = nombre;
 		this.apellidos = apellido;
 		this.ciudad = ciudad;
 		this.departamento = departamento;
+		this.usuario=usuario;
+		this.password=password;
 	}
 
 	public int getId() {
@@ -101,5 +107,23 @@ public abstract class Persona implements Serializable {
 	public void setTipoIdentificacion(Identificacion tipoIdentificacion) {
 		this.tipoIdentificacion = tipoIdentificacion;
 	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getPass() {
+		return password;
+	}
+
+	public void setPass(String password) {
+		this.password = password;
+	}
+	
+	
 
 }

@@ -1,11 +1,13 @@
 package gradle.cucumber;
 
+
+
 import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Assert;
-
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,15 +16,16 @@ import repositorio.MateriaDao;
 import repositorio.Runner;
 import repositorio.SessionFactoryProvider;
 
-public class CrearUnaMateria {
+public class BuscarUnaMateria {
 	
-	Materia materia;
-	MateriaDao materiadao;
 	Session session;
 	Transaction tx;
+	Materia materia;
+	MateriaDao materiadao;
+	Materia materiabuscada;
 	
-	@Given("iniciamos la session")
-	public void iniciamos_la_session(){
+	@Given("iniciamos session")
+	public void iniciamos_session() {
 		SessionFactoryProvider.destroy();
 		session = SessionFactoryProvider.getInstance().createSession();
 		tx = session.beginTransaction();
@@ -31,24 +34,31 @@ public class CrearUnaMateria {
 		materiadao = new MateriaDao();
 	}
 
-	@When("creo una materia con sus datos")
-	public void creo_una_materia_con_sus_datos() {
+	@When("creo una materia")
+	public void creo_una_materia() {
 		materia = new Materia();
-		materia.setCodigo(123);
-		materia.setNombre("Conexiones Inalambricas");
+		materia.setCodigo(122);
 		materia.setHorario(new Date());
-		materia.setNota1(5);
-		materia.setNota2(4);
-		materia.setNota3(3);
-		materia.setNota4(3);
-		materia.setNota5(2);
+		materia.setNombre("Algebra");
+		materia.setNota1(4);
+		materia.setNota2(5);
+		materia.setNota3(4);
+		materia.setNota4(5);
+		materia.setNota5(3);
 		materiadao.guardar(materia);
+	}
+
+	@And("busco la materia")
+	public void busco_la_materia() {
+		materiabuscada = new Materia();
+		materiabuscada = materiadao.recuperarUno("codigo", 122);
 		tx.commit();
 	}
 
-	@Then("verificamos su almacenamiento")
-	public void verificamos_su_almacenamiento() {
-		Assert.assertNotNull(materiadao.recuperarUno("codigo", 123));
+	@Then("obtengo sus datos")
+	public void obtengo_sus_datos() {
+		Assert.assertEquals(materia, materiabuscada);
+		session.close();
 	}
 
 }
